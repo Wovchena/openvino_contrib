@@ -12,7 +12,7 @@ namespace openvino_extensions {
 // so basically any STL container with std::string is compatible
 // Tensor destination will be reshaped according the input data
 template <typename BatchOfStrings>
-void pack_strings(const BatchOfStrings& strings, ov::Tensor& destination) {
+void pack_strings(const BatchOfStrings& strings, ov::Tensor&& destination) {
     auto batch_size = strings.size();
 
     // First run over all elements: calculate total memory required to hold all strings
